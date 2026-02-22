@@ -1,0 +1,9 @@
+# החרגת קבצי הגדרות רגישים
+**/appsettings.json
+**/appsettings.Development.json
+
+# החרגת קבצי הרצה וקבצים זמניים של ויזואל סטודיו
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user

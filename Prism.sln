@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prism", "Prism.csproj", "{9932CE4B-01E6-4478-8321-8E41475C8EBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\common\Common.csproj", "{91C9BBAA-7922-432B-9AC0-B8C4BE151413}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "..\Repository\Repository.csproj", "{D3F5D1E4-1A2F-4C9E-99AF-7E892C2DF7FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContext", "..\DataContext\DataContext.csproj", "{361F15A4-249F-4939-9A5B-9DD343EF3740}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "..\Service\Service.csproj", "{9F749C2B-DCB3-4376-A7AD-E9C33BDA719D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9932CE4B-01E6-4478-8321-8E41475C8EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9932CE4B-01E6-4478-8321-8E41475C8EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9932CE4B-01E6-4478-8321-8E41475C8EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9932CE4B-01E6-4478-8321-8E41475C8EBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91C9BBAA-7922-432B-9AC0-B8C4BE151413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C9BBAA-7922-432B-9AC0-B8C4BE151413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C9BBAA-7922-432B-9AC0-B8C4BE151413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C9BBAA-7922-432B-9AC0-B8C4BE151413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3F5D1E4-1A2F-4C9E-99AF-7E892C2DF7FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F5D1E4-1A2F-4C9E-99AF-7E892C2DF7FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F5D1E4-1A2F-4C9E-99AF-7E892C2DF7FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F5D1E4-1A2F-4C9E-99AF-7E892C2DF7FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{361F15A4-249F-4939-9A5B-9DD343EF3740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361F15A4-249F-4939-9A5B-9DD343EF3740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361F15A4-249F-4939-9A5B-9DD343EF3740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361F15A4-249F-4939-9A5B-9DD343EF3740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F749C2B-DCB3-4376-A7AD-E9C33BDA719D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F749C2B-DCB3-4376-A7AD-E9C33BDA719D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F749C2B-DCB3-4376-A7AD-E9C33BDA719D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F749C2B-DCB3-4376-A7AD-E9C33BDA719D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAB24204-BBE7-423D-8DCD-C880D68AC17A}
+	EndGlobalSection
+EndGlobal
