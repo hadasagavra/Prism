@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Service.Interfaces;
 [ApiController]
 [Route("api/[controller]")]
-//[Authorize]
+
 public class CategoriesController : ControllerBase
 {
     private readonly IService<CategoryDto> _service;
@@ -34,7 +34,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPost]
-    //[Authorize(Roles = "Admin")]
+    [Authorize]
     public async Task<ActionResult<CategoryDto>> Create([FromBody] CategoryDto dto)
     {
         var created = await _service.AddItem(dto);
@@ -42,7 +42,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize]
     public async Task<ActionResult<CategoryDto>> Update(int id, [FromBody] CategoryDto dto)
     {
         var updated = await _service.UpdateItem(id, dto);
@@ -50,7 +50,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize]
     public async Task<ActionResult> Delete(int id)
     {
         await _service.DeleteItem(id);

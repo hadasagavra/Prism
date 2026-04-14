@@ -9,7 +9,7 @@ using Service.Interfaces;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize]
+//[Authorize]
 public class EmailRequestsController : ControllerBase
 {
     private readonly IEmail _service;
@@ -61,7 +61,7 @@ public class EmailRequestsController : ControllerBase
     }
 
     [HttpPatch("{id}/classify")]
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public async Task<ActionResult<EmailRequest>> Classify(int id, [FromBody] ClassifyEmailDto dto)
     {
         var updated = await _service.UpdateClassification(id,dto);
