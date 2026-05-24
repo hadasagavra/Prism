@@ -9,7 +9,6 @@ using Service.Interfaces;
 
 [ApiController]
 [Route("api/[controller]")]
-//[Authorize]
 public class EmailRequestsController : ControllerBase
 {
     private readonly IEmail _service;
@@ -22,7 +21,6 @@ public class EmailRequestsController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<List<EmailRequest>>> GetAll()
     {
         var dtos = await _service.GetAll();
@@ -30,6 +28,7 @@ public class EmailRequestsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<EmailRequest>> GetById(int id)
     {
         var dto = await _service.GetById(id);
@@ -46,14 +45,9 @@ public class EmailRequestsController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
     }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateEmailRequestDto dto)
-    {
-        var updated = await _service.UpdateItem(id, (dto));
-          return Ok(updated);
-    }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult> Delete(int id)
     {
         await _service.DeleteItem(id);
@@ -61,7 +55,7 @@ public class EmailRequestsController : ControllerBase
     }
 
     [HttpPatch("{id}/classify")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<EmailRequest>> Classify(int id, [FromBody] ClassifyEmailDto dto)
     {
         var updated = await _service.UpdateClassification(id,dto);

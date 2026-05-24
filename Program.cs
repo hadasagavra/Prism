@@ -58,6 +58,7 @@ namespace Prism
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            
             })
             .AddJwtBearer(options =>
             {
@@ -77,7 +78,18 @@ namespace Prism
             // 3. רישום השכבות (חשוב לוודא שיש using מתאים למעלה כדי שהשגיאה האדומה תעלם)
             builder.Services.AddRepository();
             builder.Services.AddServices();
-
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowReact", policy =>
+                {
+                    policy.WithOrigins(
+                            "https://localhost:3000",
+                            "http://localhost:3000"
+                          )
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                });
+            });
             var app = builder.Build();
 
             // 4. הגדרות Swagger (ללא שינוי)
@@ -90,8 +102,8 @@ namespace Prism
                     c.RoutePrefix = "swagger";
                 });
             }
-
-            app.UseHttpsRedirection();
+            app.UseCors("AllowReact");
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseAuthorization();

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Entities;
 using Service.Interfaces;
-
+//הסיסמא היא hg20062005
 [ApiController]
 [Route("api/[controller]")]
 [Authorize(Roles = "Admin")]
@@ -53,6 +53,12 @@ public class ManagersController : ControllerBase
     public async Task<ActionResult> Delete(int id)
     {
         await _service.DeleteItem(id);
+        return NoContent();
+    }
+    [HttpPatch("{id}/change-password")]
+    public async Task<IActionResult> ChangePassword(int id, [FromBody] ChangePasswordDto dto)
+    {
+        await _service.ChangePassword(id, dto);
         return NoContent();
     }
 }
